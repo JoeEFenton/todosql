@@ -1,0 +1,25 @@
+{
+  "name": "todosql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeEFenton/todosql.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoeEFenton/todosql/issues"
+  },
+  "homepage": "https://github.com/JoeEFenton/todosql#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "mustache-express": "^1.2.5",
+    "sequelize": "^4.3.2"
+  }
+}
