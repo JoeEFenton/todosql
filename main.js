@@ -12,9 +12,31 @@ app.set('view engine', 'mustache')
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.post("/", function(req, res){
-  models.Todo.create({
+  models.Todos.create({
   title: req.body.todo
-}).then(function(req, res) {
+}).then(function(todo) {
   res.redirect('/');
 })
-})
+});
+
+app.get("/", function(req, res) {
+ models.Todos.findAll().then(function(todos){
+   todos.forEach(function(todo){
+     console.log('one more todo')
+   })
+   res.render("index", {joeskey: todos})
+ });
+
+});
+
+app.post('/completed', function(req, res){
+  models.Todos.destroy({where: {id:Number(req.body.delete)} })
+  .then(function(erase){
+    res.redirect("/");
+  })
+
+});
+
+app.listen(3000, function(req, res){
+  console.log ("hey hey hey")
+});

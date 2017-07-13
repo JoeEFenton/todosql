@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>todosql</title>
-  </head>
-  <body>
-    <form method="post" action="/">
-      <input name="todo" type="text" placeholder="todos">
-      <button type="submit">enter</button>
+
+<head>
+  <meta charset="utf-8">
+  <title>todosql</title>
+</head>
+
+<body>
+  <form method="post" action="/">
+    <input name="todo" type="text" placeholder="todos">
+    <button type="submit">enter</button>
+  </form>
+  <ul>
+    <form method="post" action="/completed">
+      {{#joeskey}}
+
+        <li>
+          {{title}}
+        <button type="submit" name="delete" value="{{id}}">delete
+        </li>
+
+      {{/joeskey}}
     </form>
+  </ul>
 
+</body>
 
-  </body>
 </html>
